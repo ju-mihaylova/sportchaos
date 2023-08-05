@@ -60,3 +60,10 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+/* Carousel */
+.carousel img {
+    max-width: 1000px;
+    max-height: 200px;
+    margin: 0 auto;
+}
