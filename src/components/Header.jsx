@@ -15,7 +15,7 @@ const MyNavbar = () => {
                 <Navbar.Brand href="home">
                     <img
                         alt=""
-                        src="/vite.svg"
+                        src="/sportchaos-logo.png"
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
@@ -32,15 +32,10 @@ const MyNavbar = () => {
                     id="responsive-navbar-nav"
                     className="justify-content-end"
                 >
-                    <Nav className="ml-auto">
-                        <NavDropdown
-                            title={<span><FaShoppingCart /></span>}
-                            id="collapsible-nav-dropdown"
-                        >
-                            {/* Shopping cart content here */}
-                        </NavDropdown>
-                    </Nav>
                     <Nav>
+                        <Nav.Link href="#">
+                            <FaShoppingCart />
+                        </Nav.Link>
                         <Nav.Link href="home">Home</Nav.Link>
                         <Nav.Link href="about">About</Nav.Link>
                         <Nav.Link href="contact">Contact</Nav.Link>
