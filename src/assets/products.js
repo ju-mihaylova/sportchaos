@@ -96,7 +96,7 @@ export const products = [
     },
     {
         id: 10,
-        name: 'SPEEDO WOMENS SHAPING BRIGITTE Swimsuit',
+        name: 'SPEEDO WOMENS BRIGITTE Swimsuit',
         description: 'Subtle in a stunning deep plum shade',
         category: 'Swimming suit',
         color: 'Red',

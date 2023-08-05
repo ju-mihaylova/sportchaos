@@ -14,11 +14,15 @@ const ProductTile = ({ product, addToCart }) => {
     };
 
     return (
-        <Card>
+        <Card className="mx-auto">
             <Card.Img variant="top" src={product.image} alt={product.name} />
             <Card.Body>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Text>{product.description}</Card.Text>
+                <Card.Title style={{ minHeight: '90px' }}>
+                    {product.name}
+                </Card.Title>
+                <Card.Text style={{ minHeight: '110px' }}>
+                    {product.description}
+                </Card.Text>
                 <Card.Text>
                     {product.discountedPrice ? (
                         <div>

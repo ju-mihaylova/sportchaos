@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
 import ProductGrid from './ProductGrid';
-import Footer from './Footer';
 import SortingDropdown from './SortingDropdown';
 import CategorySection from './CategorySection';
 import { products } from '../assets/products';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MyCarousel from './MyCarousel';
 
 const Products = () => {
     const [sortOption, setSortOption] = useState('alpha-asc');
@@ -47,47 +47,45 @@ const Products = () => {
     ];
 
     return (
-            <div id="app-container">
-                <div className="container-fluid mt-3">
+        <div id="app-container">
+            <MyCarousel />
+            <div className="container-fluid mt-3">
+                <div className="row justify-content-between">
+                    <div className="col-md-1 col-1">
+                        <CategorySection
+                            options={categoryOptions}
+                            selectedCategory={selectedCategory}
+                            onSelectCategory={handleCategorySelect}
+                        />
+                    </div>
+                    <div className="col-md-1 col-1">
+                        <SortingDropdown onSelectSort={handleSortChange} />
+                    </div>
+                </div>
+                <div className="container-fluid" id="filter-product-container">
                     <div className="row">
-                        <div className="col-md-11">
-                            <CategorySection
-                                options={categoryOptions}
-                                selectedCategory={selectedCategory}
-                                onSelectCategory={handleCategorySelect}
+                        <div className="col-md-2">
+                            <Sidebar
+                                onSelectColor={handleColorSelect}
+                                onSelectPrice={handlePriceSelect}
                             />
                         </div>
-                        <div className="col-md-1 mr-3">
-                            <SortingDropdown onSelectSort={handleSortChange} />
-                        </div>
-                    </div>
-                    <div
-                        className="container-fluid mt-3"
-                        id="filter-product-container"
-                    >
-                        <div className="row">
-                            <div className="col-md-1 col-xs-12">
-                                <Sidebar
-                                    onSelectColor={handleColorSelect}
-                                    onSelectPrice={handlePriceSelect}
+                        <div className="col-md-10">
+                            <div className="mb-4">
+                                <ProductGrid
+                                    products={products}
+                                    sortOption={sortOption}
+                                    selectedCategory={selectedCategory}
+                                    selectedColor={selectedColor}
+                                    selectedPrice={selectedPrice}
+                                    addToCart={addToCart}
                                 />
-                            </div>
-                            <div className="col-md-11 col-xs-12">
-                                <div className="mb-4">
-                                    <ProductGrid
-                                        products={products}
-                                        sortOption={sortOption}
-                                        selectedCategory={selectedCategory}
-                                        selectedColor={selectedColor}
-                                        selectedPrice={selectedPrice}
-                                        addToCart={addToCart}
-                                    />
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     );
 };
 

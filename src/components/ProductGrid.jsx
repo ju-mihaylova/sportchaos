@@ -11,8 +11,8 @@ const ProductGrid = ({
     selectedPrice,
     addToCart
 }) => {
-    const [totalProducts, setTotalProducts] = useState(3); // Initially display 6 products
-    const productsPerPage = 3; // Number of products to load per click
+    const [totalProducts, setTotalProducts] = useState(4); // Initially display 4 products
+    const productsPerPage = 4; // Number of products to load per click
 
     const handleLoadMore = () => {
         setTotalProducts((prevTotal) => prevTotal + productsPerPage);
@@ -77,10 +77,10 @@ const ProductGrid = ({
     const displayedProducts = sortedProducts.slice(0, totalProducts);
 
     return (
-        <Container>
+        <Container className="product-grid-container mt-4">
             <Row>
                 {displayedProducts.map((product) => (
-                    <Col md={4} key={product.id} className="mb-4">
+                    <Col md={3} key={product.id} className="mb-4">
                         <ProductTile
                             product={product}
                             addToCart={addToCart} // Pass the addToCart function to ProductTile
