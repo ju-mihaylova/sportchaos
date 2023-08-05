@@ -18,7 +18,9 @@ const Sidebar = ({ onSelectColor, onSelectPrice }) => {
             </div>
             <Form>
                 <Form.Group controlId="colorFilter">
-                    <Form.Label>Colors</Form.Label>
+                    <Form.Label className="text-info fw-bold fs-4">
+                        Colors
+                    </Form.Label>
                     <Form.Control
                         as="select"
                         onChange={(e) => onSelectColor(e.target.value)}
@@ -32,7 +34,9 @@ const Sidebar = ({ onSelectColor, onSelectPrice }) => {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="priceFilter">
-                    <Form.Label>Price Range</Form.Label>
+                    <Form.Label className="text-info fw-bold fs-4">
+                        Price Range
+                    </Form.Label>
                     <Dropdown>
                         <Dropdown.Toggle variant="light" id="dropdown-price">
                             Select Price Range
