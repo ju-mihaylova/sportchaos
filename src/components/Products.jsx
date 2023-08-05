@@ -70,8 +70,8 @@ const Products = () => {
                                 onSelectPrice={handlePriceSelect}
                             />
                         </div>
-                        <div className="col-md-10">
-                            <div className="mb-4">
+                        <div className="col-md-10 mb-4">
+                                {/* TODO: add product counter */}
                                 <ProductGrid
                                     products={products}
                                     sortOption={sortOption}
@@ -80,7 +80,6 @@ const Products = () => {
                                     selectedPrice={selectedPrice}
                                     addToCart={addToCart}
                                 />
-                            </div>
                         </div>
                     </div>
                 </div>
