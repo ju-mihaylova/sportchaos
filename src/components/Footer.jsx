@@ -2,8 +2,8 @@ import { Container, Nav } from 'react-bootstrap';
 
 const Footer = () => {
     const footerLinks = [
-        { label: 'T & C', link: '#' },
-        { label: 'Privacy Policy', link: '#' },
+        { label: 'T & C', link: 'terms' },
+        { label: 'Privacy Policy', link: 'policy' },
         { label: 'Contact Us', link: 'contact' },
     ];
 
