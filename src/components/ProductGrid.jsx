@@ -9,7 +9,7 @@ const ProductGrid = ({
     selectedCategory,
     selectedColor,
     selectedPrice,
-    addToCart
+    addToCart,
 }) => {
     const [totalProducts, setTotalProducts] = useState(4); // Initially display 4 products
     const productsPerPage = 4; // Number of products to load per click
@@ -71,7 +71,6 @@ const ProductGrid = ({
         const sorted = sortProducts(sortOption, filteredByPrice);
         setSortedProducts(sorted);
     }, [sortOption, products, selectedCategory, selectedColor, selectedPrice]);
-
 
     // Slice the sortedProducts array to display only the specified number of products
     const displayedProducts = sortedProducts.slice(0, totalProducts);

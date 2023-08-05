@@ -23,7 +23,7 @@ const ProductTile = ({ product, addToCart }) => {
                 <Card.Text style={{ minHeight: '110px' }}>
                     {product.description}
                 </Card.Text>
-                <Card.Text>
+                <div>
                     {product.discountedPrice ? (
                         <div>
                             <span className="text-muted">${product.price}</span>{' '}
@@ -34,7 +34,7 @@ const ProductTile = ({ product, addToCart }) => {
                     ) : (
                         <span>${product.price}</span>
                     )}
-                </Card.Text>
+                </div>
                 <div className="mb-2">
                     {Array.from({ length: product.rating }).map((_, index) => (
                         <FaStar key={index} color="#ffc107" />

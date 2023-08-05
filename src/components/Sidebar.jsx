@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Form, Dropdown } from 'react-bootstrap';
 
 const Sidebar = ({ onSelectColor, onSelectPrice }) => {
@@ -10,6 +11,18 @@ const Sidebar = ({ onSelectColor, onSelectPrice }) => {
         { label: '$61 - $62', min: 61, max: 62 },
         { label: '$63 - $64', min: 63, max: 64 },
     ];
+
+    const [selectedPriceRange, setSelectedPriceRange] = useState(
+        priceRanges[0]
+    );
+
+    const handlePriceRangeSelect = (range) => {
+        setSelectedPriceRange(range);
+        onSelectPrice({
+            min: range.min,
+            max: range.max,
+        });
+    };
 
     return (
         <div>
@@ -39,17 +52,14 @@ const Sidebar = ({ onSelectColor, onSelectPrice }) => {
                     </Form.Label>
                     <Dropdown>
                         <Dropdown.Toggle variant="light" id="dropdown-price">
-                            Select Price Range
+                            {selectedPriceRange.label}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {priceRanges.map((range, index) => (
                                 <Dropdown.Item
                                     key={index}
                                     onClick={() =>
-                                        onSelectPrice({
-                                            min: range.min,
-                                            max: range.max,
-                                        })
+                                        handlePriceRangeSelect(range)
                                     }
                                 >
                                     {range.label}
